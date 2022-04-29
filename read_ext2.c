@@ -157,12 +157,7 @@ void read_group_desc( int                      fd,        /* the disk image file
 		      struct ext2_group_desc *group     /* where to put the group-descriptor */
 					)
 {
-		if (ngroup != 0 &&
-		ngroup != 1 &&
-		isPowerOf(ngroup, 3) &&
-		isPowerOf(ngroup, 5) &&
-		isPowerOf(ngroup, 7) 
-		)
+		if (ngroup != 0 && ngroup != 1 && isPowerOf(ngroup, 3) && isPowerOf(ngroup, 5) && isPowerOf(ngroup, 7) )
 		{
 			lseek(fd, BASE_OFFSET + BLOCK_OFFSET(blocks_per_group * ngroup), SEEK_SET);
 		}
