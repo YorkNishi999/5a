@@ -1,0 +1,614 @@
+Reading first super-block from device: 
+Block size                    : 1024
+number of inodes in a block   : 8
+Inode table size in blocks    : 160
+Blocks per group              : 8192
+number of block groups        : 2
+debug: num_groups: 2
+in read_super_block func offset: 1024
+Reading super-block from device: 
+Inodes count            : 2560
+Blocks count            : 10240
+First data block        : 1
+Block size              : 1024
+log2(Block size)        : 0
+Blocks per group        : 8192
+Inodes per group        : 1280
+First non-reserved inode: 11
+Size of inode structure : 128
+in read_group_desc func offset: 2080
+Reading group-descriptor from device:
+Blocks bitmap block: 42
+Inodes bitmap block: 43
+Inodes table block : 44
+Free blocks count  : 4446
+Free inodes count  : 1267
+Directories count  : 2
+img: 1, level: 0, inode 0: 
+number of blocks: 2147483647, inode->i_blocks: 4294967295
+Is directory? false. Is Regular file? false
+size: 4294967295
+img: 1, level: 0, inode: 0, Block  0: 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Block  1: 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Block  2: 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Block  3: 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Block  4: 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Block  5: 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Block  6: 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Block  7: 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Block  8: 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Block  9: 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Block 10: 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Block 11: 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Single : 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Double : 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode: 0, Triple : 4294967295
+img: 1, level: 1, inode 0: 
+img: 1, level: 1, inode 1: 
+img: 1, level: 1, inode 2: 
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
+img: 1, level: 0, inode 1: 
+img: 1, level: 0, inode 2: 
+number of blocks: 1, inode->i_blocks: 2
+Is directory? true. Is Regular file? false
+size: 1024
+img: 1, level: 0, inode: 2, Block  0: 204
+Directory inode
+img: 0, level: 1, inode 0: 
+img: 0, level: 1, inode 1: 
+number of blocks: 16908294, inode->i_blocks: 33816588
+Is directory? false. Is Regular file? false
+size: 33619980
+img: 0, level: 1, inode: 1, Block  0: 18809820
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Block  1: 1868852841
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Block  2: 1769170286
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Block  3: 1714253409
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Block  4: 761749868
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Block  5: 1920235621
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Block  6: 1836264801
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Block  7: 778857569
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Block  8: 6778986
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Block  9: 13
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Block 10: 18154420
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Block 11: 1852142182
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Single : 1714251875
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Double : 761749868
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode: 1, Triple : 1818324339
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 0, level: 1, inode 2: 
+img: 0, level: 1, inode 3: 
+img: 0, level: 1, inode 4: 
+img: 0, level: 1, inode 5: 
+img: 0, level: 1, inode 6: 
+img: 0, level: 1, inode 7: 
+img: 1, level: 0, inode 3: 
+img: 1, level: 0, inode 4: 
+img: 1, level: 0, inode 5: 
+img: 1, level: 0, inode 6: 
+img: 1, level: 0, inode 7: 
+number of blocks: 79, inode->i_blocks: 158
+Is directory? false. Is Regular file? true
+size: 67383296
+img: 1, level: 0, inode: 7, Double : 217
+img: 1, level: 1, inode 0: 
+number of blocks: 119844096, inode->i_blocks: 239688192
+Is directory? false. Is Regular file? false
+size: 898370441
+img: 1, level: 1, inode: 0, Block  0: 3240917647
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Block  1: 4165634996
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Block  2: 3930237990
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Block  3: 972184702
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Block  4: 2368497613
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Block  5: 474590607
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Block  6: 3803804356
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Block  7: 2433570707
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Block  8: 4230132402
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Block  9: 2439565003
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Block 10: 2855826115
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Block 11: 1617189937
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Single : 1389272970
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Double : 1690688953
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 0, Triple : 2460133859
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode 1: 
+number of blocks: 4, inode->i_blocks: 9
+Is directory? false. Is Regular file? false
+size: 3
+img: 1, level: 1, inode: 1, Block  0: 12
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Block  1: 13
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Block  2: 14
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Block  3: 15
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Block  4: 16
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Block  5: 17
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Block  6: 18
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Block  7: 19
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Block  8: 20
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Block  9: 21
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Block 10: 22
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Block 11: 23
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Single : 24
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Double : 25
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode: 1, Triple : 26
+img: 1, level: 2, inode 0: 
+img: 1, level: 2, inode 1: 
+img: 1, level: 2, inode 2: 
+img: 1, level: 2, inode 3: 
+img: 1, level: 2, inode 4: 
+img: 1, level: 2, inode 5: 
+img: 1, level: 2, inode 6: 
+img: 1, level: 2, inode 7: 
+img: 1, level: 1, inode 2: 
+number of blocks: 20, inode->i_blocks: 41
+Is directory? false. Is Regular file? false
+size: 35
+img: 1, level: 1, inode 3: 
+img: 1, level: 1, inode 4: 
+img: 1, level: 1, inode 5: 
+img: 1, level: 1, inode 6: 
+img: 1, level: 1, inode 7: 
