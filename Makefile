@@ -12,3 +12,6 @@ clean:
 
 main: $(MAIN.C)
 	$(CC) $(CFLAGS) $(DFLAGS) $(MAIN.C) $(DEPENDENCIES.C) -o $(EXEC)
+
+runscan2: runscan2.c
+	$(CC) $(CFLAGS) $(DFLAGS) runscan2.c $(DEPENDENCIES.C) -o runscan2
