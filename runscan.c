@@ -60,7 +60,9 @@ int main(int argc, char **argv) {
 				printf("\t mode: %u size: %u\n", inode->i_mode, inode->i_size);
 			}
 			off_t tmp;
-			if (  && ((tmp = inode->i_block[i]) != 0)) {
+			if (S_ISDIR(inode->i_mode) && ((tmp = inode->i_block[i]) != 0) ) {
+				printf("Directory inode\n");
+			} else if ( S_ISREG(inode->i_mode) && ((tmp = inode->i_block[i]) != 0)) {
 				printf("current file offset: %lu\n",lseek(fd, 0, SEEK_CUR));
 				off_t a = lseek(fd, BASE_OFFSET + BLOCK_OFFSET(tmp) + 2080, SEEK_SET); // a: 217, tmp: 217
 				printf("%lu\n", a);
