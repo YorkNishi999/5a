@@ -73,11 +73,11 @@ int main(int argc, char **argv) {
 		}
 		printf("is_jpg: %d, inode num is [%d]\n", is_jpg, i );
 			
-		char* inode_num = malloc(2); 
-		inode_num = "13"; // for for test, need to be modified.
+		char* inode_num = malloc(sizeof(i)); 
+		sprintf(inode_num, "%d", i);
 
 		// only test inode13, need to be modified.
-		if (is_jpg && i == 13) 
+		if (is_jpg) 
 		{ 
 			for(int j = 0; j < EXT2_N_BLOCKS; j++) 
 			{
@@ -88,8 +88,8 @@ int main(int argc, char **argv) {
 				memset (buffer, 0, block_size);
 				read(fd, buffer, block_size);    	
 				//printf("r_value: %d\n", r_value);
-				printf("J:   %d\n", j);
-				printf("Blokc num:   %d\n", inode->i_block[j]);
+				//printf("J:   %d\n", j);
+				//printf("Blokc num:   %d\n", inode->i_block[j]);
 
 
 				// filename path
