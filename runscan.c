@@ -54,11 +54,12 @@ int main(int argc, char **argv) {
 			S_ISDIR(inode->i_mode) ? "true" : "false",
 			S_ISREG(inode->i_mode) ? "true" : "false");
 
-		// Part1: scan all jpg files  -> doesn't work now, the problem seems I don't seek the correct data blocks of pictures.
+		// Part1: scan all jpg files  -> can extract jpg file, but only for the pic only use direct block. naming problem wasn't solved. 
 		if (S_ISREG(inode->i_mode)) 
 		{
 
-		lseek(fd, (int)inode->i_block[0] * block_size, SEEK_SET);    /* position data block */
+		lseek(fd, BLOCK_OFFSET(inode->i_block[0]), SEEK_SET);    /* position data block */
+		memset (buffer, 0, block_size);
 		read(fd, buffer, block_size);    				/* read data block */
 
 		int is_jpg = 0;
@@ -83,10 +84,12 @@ int main(int argc, char **argv) {
 
 				if(inode->i_block[j] == 0) continue;
 
-				lseek(fd, (int)inode->i_block[j] * block_size, SEEK_SET);    /* position data block */
+				lseek(fd, BLOCK_OFFSET(inode->i_block[j]), SEEK_SET);    /* position data block */
 				memset (buffer, 0, block_size);
 				read(fd, buffer, block_size);    	
 				//printf("r_value: %d\n", r_value);
+				printf("J:   %d\n", j);
+				printf("Blokc num:   %d\n", inode->i_block[j]);
 
 
 				// filename path
@@ -108,7 +111,7 @@ int main(int argc, char **argv) {
 					exit(0);
 				}
 				else {
-					fputs(buffer, fp);
+					fwrite(buffer, 1, 1024, fp);
 				}
 				fclose(fp);
 			}
