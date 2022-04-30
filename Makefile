@@ -9,6 +9,7 @@ default: main
 
 clean:
 	rm -f $(EXEC)
+	rm -f runscan2
 
 main: $(MAIN.C)
 	$(CC) $(CFLAGS) $(DFLAGS) $(MAIN.C) $(DEPENDENCIES.C) -o $(EXEC)
