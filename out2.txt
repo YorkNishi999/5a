@@ -1,0 +1,165 @@
+Reading first super-block from device: 
+Block size                    : 1024
+number of inodes in a block   : 8
+Inode table size in blocks    : 160
+Blocks per group              : 8192
+number of block groups        : 2
+in read_super_block func offset: 1024
+Reading super-block from device: 
+Inodes count            : 2560
+Blocks count            : 10240
+First data block        : 1
+Block size              : 1024
+log2(Block size)        : 0
+Blocks per group        : 8192
+Inodes per group        : 1280
+First non-reserved inode: 11
+Size of inode structure : 128
+in read_group_desc func offset: 2080
+Reading group-descriptor from device:
+Blocks bitmap block: 42
+Inodes bitmap block: 43
+Inodes table block : 44
+Free blocks count  : 4446
+Free inodes count  : 1267
+Directories count  : 2
+There are 8 inodes in an inode table block and 160 blocks in the idnode table
+inode 0: 
+number of blocks 2147483647
+Is directory? false 
+ Is Regular file? false
+Block  0 : 4294967295
+Block  1 : 4294967295
+Block  2 : 4294967295
+Block  3 : 4294967295
+Block  4 : 4294967295
+Block  5 : 4294967295
+Block  6 : 4294967295
+Block  7 : 4294967295
+Block  8 : 4294967295
+Block  9 : 4294967295
+Block 10 : 4294967295
+Block 11 : 4294967295
+Single   : 4294967295
+Double   : 4294967295
+Triple   : 4294967295
+inode 2: 
+number of blocks 1
+Is directory? true 
+ Is Regular file? false
+Entry name is --indonesian-flag-extra-small.jpg--; Inode num is [12]
+Block  0 : 204
+Block  1 : 0
+Block  2 : 0
+Block  3 : 0
+Block  4 : 0
+Block  5 : 0
+Block  6 : 0
+Block  7 : 0
+Block  8 : 0
+Block  9 : 0
+Block 10 : 0
+Block 11 : 0
+Single   : 0
+Double   : 0
+Triple   : 0
+inode 7: 
+number of blocks 79
+Is directory? false 
+ Is Regular file? true
+is_jpg: 0, inode num is [7]
+Block  0 : 0
+Block  1 : 0
+Block  2 : 0
+Block  3 : 0
+Block  4 : 0
+Block  5 : 0
+Block  6 : 0
+Block  7 : 0
+Block  8 : 0
+Block  9 : 0
+Block 10 : 0
+Block 11 : 0
+Single   : 0
+Double   : 217
+Triple   : 0
+inode 11: 
+number of blocks 1
+Is directory? true 
+ Is Regular file? false
+Entry name is --architecture_big_ben.jpg--; Inode num is [14]
+Block  0 : 205
+Block  1 : 0
+Block  2 : 0
+Block  3 : 0
+Block  4 : 0
+Block  5 : 0
+Block  6 : 0
+Block  7 : 0
+Block  8 : 0
+Block  9 : 0
+Block 10 : 0
+Block 11 : 0
+Single   : 0
+Double   : 0
+Triple   : 0
+inode 12: 
+number of blocks 1
+Is directory? false 
+ Is Regular file? true
+is_jpg: 1, inode num is [12]
+Block  0 : 206
+Block  1 : 0
+Block  2 : 0
+Block  3 : 0
+Block  4 : 0
+Block  5 : 0
+Block  6 : 0
+Block  7 : 0
+Block  8 : 0
+Block  9 : 0
+Block 10 : 0
+Block 11 : 0
+Single   : 0
+Double   : 0
+Triple   : 0
+inode 13: 
+number of blocks 3
+Is directory? false 
+ Is Regular file? true
+is_jpg: 1, inode num is [13]
+Block  0 : 207
+Block  1 : 208
+Block  2 : 209
+Block  3 : 0
+Block  4 : 0
+Block  5 : 0
+Block  6 : 0
+Block  7 : 0
+Block  8 : 0
+Block  9 : 0
+Block 10 : 0
+Block 11 : 0
+Single   : 0
+Double   : 0
+Triple   : 0
+inode 14: 
+number of blocks 3539
+Is directory? false 
+ Is Regular file? true
+is_jpg: 1, inode num is [14]
+Block  0 : 210
+Block  1 : 211
+Block  2 : 212
+Block  3 : 213
+Block  4 : 214
+Block  5 : 215
+Block  6 : 216
+Block  7 : 218
+Block  8 : 219
+Block  9 : 220
+Block 10 : 221
+Block 11 : 222
+Single   : 223
+Double   : 480
+Triple   : 0

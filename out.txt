@@ -1,0 +1,74 @@
+Reading first super-block from device: 
+Block size                    : 1024
+number of inodes in a block   : 8
+Inode table size in blocks    : 160
+Blocks per group              : 8192
+number of block groups        : 2
+debug: num_groups: 2
+in read_super_block func offset: 1024
+Reading super-block from device: 
+Inodes count            : 2560
+Blocks count            : 10240
+First data block        : 1
+Block size              : 1024
+log2(Block size)        : 0
+Blocks per group        : 8192
+Inodes per group        : 1280
+First non-reserved inode: 11
+Size of inode structure : 128
+in read_group_desc func offset: 2080
+Reading group-descriptor from device:
+Blocks bitmap block: 42
+Inodes bitmap block: 43
+Inodes table block : 44
+Free blocks count  : 4446
+Free inodes count  : 1267
+Directories count  : 2
+img: 1, level: 0, inode 0: 
+number of blocks: 2147483647, inode->i_blocks: 4294967295
+img: 1, level: 0, inode 2: 
+number of blocks: 1, inode->i_blocks: 2
+Is directory? true. Is Regular file? false
+size: 1024
+img: 1, level: 0, inode 7: 
+number of blocks: 79, inode->i_blocks: 158
+Is directory? false. Is Regular file? true
+size: 67383296
+	is_jpg: 0, inode num is [7]
+img: 1, level: 0, inode 11: 
+number of blocks: 1, inode->i_blocks: 2
+Is directory? true. Is Regular file? false
+size: 1024
+img: 1, level: 0, inode 12: 
+number of blocks: 1, inode->i_blocks: 2
+Is directory? false. Is Regular file? true
+size: 775
+	is_jpg: 1, inode num is [12]
+	img: 1, level: 0, inode: 12, Block  0: 206
+img: 1, level: 0, inode 13: 
+number of blocks: 3, inode->i_blocks: 6
+Is directory? false. Is Regular file? true
+size: 2470
+	is_jpg: 1, inode num is [13]
+	img: 1, level: 0, inode: 13, Block  0: 207
+	img: 1, level: 0, inode: 13, Block  1: 208
+	img: 1, level: 0, inode: 13, Block  2: 209
+img: 1, level: 0, inode 14: 
+number of blocks: 3539, inode->i_blocks: 7078
+Is directory? false. Is Regular file? true
+size: 3608525
+	is_jpg: 1, inode num is [14]
+	img: 1, level: 0, inode: 14, Block  0: 210
+	img: 1, level: 0, inode: 14, Block  1: 211
+	img: 1, level: 0, inode: 14, Block  2: 212
+	img: 1, level: 0, inode: 14, Block  3: 213
+	img: 1, level: 0, inode: 14, Block  4: 214
+	img: 1, level: 0, inode: 14, Block  5: 215
+	img: 1, level: 0, inode: 14, Block  6: 216
+	img: 1, level: 0, inode: 14, Block  7: 218
+	img: 1, level: 0, inode: 14, Block  8: 219
+	img: 1, level: 0, inode: 14, Block  9: 220
+	img: 1, level: 0, inode: 14, Block 10: 221
+	img: 1, level: 0, inode: 14, Block 11: 222
+	img: 1, level: 0, inode: 14, Single : 223
+	img: 1, level: 0, inode: 14, Double : 480
