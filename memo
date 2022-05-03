@@ -1,3 +1,9 @@
+1. File: at inode 14, infinite loop -> why?
+
+2. there is no 'EOF' at the last at the file.
+
+
+
 Command
 ./runscan ./disk_images/image-01 output
 
@@ -26,4 +32,9 @@ Inodes table block : 44
 Free blocks count  : 4446
 Free inodes count  : 1267
 Directories count  : 2
+
+
+test 9
+
+(inode->i_block[0] != 0 && S_ISREG(inode->i_mode) && inode->i_block[14] == 0)
 

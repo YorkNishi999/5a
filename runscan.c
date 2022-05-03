@@ -62,7 +62,7 @@ int main(int argc, char **argv) {
     // Part1: scan all jpg files  -> can extract jpg file, but only for the pic only use direct block. naming problem wasn't solved.
     if (S_ISREG(inode->i_mode)) {
       lseek(fd, BLOCK_OFFSET(inode->i_block[0]), SEEK_SET);    /* position data block */
-      memset (buffer, 0, block_size);
+      memset(buffer, 0, block_size);
       read(fd, buffer, block_size);    				/* read data block */
 
       int is_jpg = 0;
@@ -98,47 +98,48 @@ int main(int argc, char **argv) {
           strcat(path, inode_num);
           strcat(path, str3);
 
-          if (j < 12) {
+          FILE *fp = fopen(path, "a+");
+          if (j < EXT2_IND_BLOCK) { // use const.
             lseek(fd, BLOCK_OFFSET(inode->i_block[j]), SEEK_SET);    /* position data block */
             memset(buffer, 0, block_size);
-            read(fd, buffer, block_size);
+            int rv = read(fd, buffer, block_size);  // to be changed
+            printf("rv in direct: %d\n", rv);
 
             // write filename to file
-            FILE *fp = fopen(path, "a+");
+
             if(fp == NULL) {
               printf("Fail to open file.");
               exit(0);
             } else {
-              fwrite(buffer, 1, 1024, fp);
+              fwrite(buffer, 1, rv, fp); // not write full size block// to be changed
             }
-            fclose(fp);
           }  // end of direct
+          // fclose(fp);
 
-          if (j == 12) {
+          if (j == EXT2_IND_BLOCK) {
             lseek(fd, BLOCK_OFFSET(inode->i_block[j]), SEEK_SET);
             memset(single_buffer, 0, block_size);
             read(fd, single_buffer, block_size);
 
             int* single_block_num = (int *)single_buffer;
+            // FILE *fp = fopen(path, "a+");
             for (int fi = 0; fi<256; fi++) {
               lseek(fd, BLOCK_OFFSET(single_block_num[fi]), SEEK_SET);
               memset(buffer, 0, block_size);
-              read(fd, buffer, block_size);
+              int rv = read(fd, buffer, block_size);
 
               // write filename to file
-              FILE *fp = fopen(path, "a+");
               if(fp == NULL) {
                 printf("Fail to open file.");
                 exit(0);
               } else {
-                fwrite(buffer, 1, 1024, fp);
+                fwrite(buffer, 1, rv, fp);
               }
-              fclose(fp);
-
             }
+            // fclose(fp);
           }  // end of single
 
-          if (j == 13) {
+          if (j == EXT2_DIND_BLOCK) {
             lseek(fd, BLOCK_OFFSET(inode->i_block[j]), SEEK_SET);
             memset(double_buffer, 0, block_size);
             read(fd, double_buffer, block_size);
@@ -153,21 +154,21 @@ int main(int argc, char **argv) {
               for (int fii = 0; fii<256; fii++) {
                 lseek(fd, BLOCK_OFFSET(single_block_num[fii]), SEEK_SET);
                 memset(buffer, 0, block_size);
-                read(fd, buffer, block_size);
+                int rv = read(fd, buffer, block_size);
                 // write filename to file
-                FILE *fp = fopen(path, "a+");
+                // FILE *fp = fopen(path, "a+");
                 if(fp == NULL) {
                   printf("Fail to open file.");
                   exit(0);
                 } else {
-                  fwrite(buffer, 1, 1024, fp);
+                  fwrite(buffer, 1, rv, fp);
                 }
-                fclose(fp);
+                // fclose(fp);
               }
             }
           }  // end of double
 
-          if (j == 14) {
+          if (j == EXT2_TIND_BLOCK) {
             lseek(fd, BLOCK_OFFSET(inode->i_block[j]), SEEK_SET);
             memset(triple_buffer, 0, block_size);
             read(fd, triple_buffer, block_size);
@@ -191,18 +192,19 @@ int main(int argc, char **argv) {
                   read(fd, buffer, block_size);
                   
                   // write filename to file
-                  FILE *fp = fopen(path, "a+");
+                  // FILE *fp = fopen(path, "a+");
                   if(fp == NULL) {
                     printf("Fail to open file.");
                     exit(0);
                   } else {
                     fwrite(buffer, 1, 1024, fp);
                   }
-                  fclose(fp);
+                  // fclose(fp);
                 }
               }
             }
           }  // end of triple
+          fclose(fp);
         } // end of for (j)
       }
     }
@@ -254,16 +256,16 @@ int main(int argc, char **argv) {
     }
 
     // print i_block numberss
-    // for(unsigned int i=0; i<EXT2_N_BLOCKS; i++) {
-    //   if (i < EXT2_NDIR_BLOCKS)                                 /* direct blocks */
-    //     printf("Block %2u : %u\n", i, inode->i_block[i]);
-    //   else if (i == EXT2_IND_BLOCK)                             /* single indirect block */
-    //     printf("Single   : %u\n", inode->i_block[i]);
-    //   else if (i == EXT2_DIND_BLOCK)                            /* double indirect block */
-    //     printf("Double   : %u\n", inode->i_block[i]);
-    //   else if (i == EXT2_TIND_BLOCK)                            /* triple indirect block */
-    //     printf("Triple   : %u\n", inode->i_block[i]);
-    // }
+    for(unsigned int i=0; i<EXT2_N_BLOCKS; i++) {
+      if (i < EXT2_NDIR_BLOCKS)                                 /* direct blocks */
+        printf("Block %2u : %u\n", i, inode->i_block[i]);
+      else if (i == EXT2_IND_BLOCK)                             /* single indirect block */
+        printf("Single   : %u\n", inode->i_block[i]);
+      else if (i == EXT2_DIND_BLOCK)                            /* double indirect block */
+        printf("Double   : %u\n", inode->i_block[i]);
+      else if (i == EXT2_TIND_BLOCK)                            /* triple indirect block */
+        printf("Triple   : %u\n", inode->i_block[i]);
+    }
     free(inode);
   }
   close(fd);
