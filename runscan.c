@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
   read_super_block(fd, 0, &super);
   read_group_desc(fd, 0, &group);
 
-  printf("There are %u inodes in an inode table block and %u blocks in the idnode table\n", inodes_per_block, itable_blocks);
+  // printf("There are %u inodes in an inode table block and %u blocks in the idnode table\n", inodes_per_block, itable_blocks);
   //iterate the first inode block
   off_t start_inode_table = locate_inode_table(0, &group);
   for (unsigned int i = 0; i < inodes_per_block * itable_blocks; i++) {
@@ -53,11 +53,11 @@ int main(int argc, char **argv) {
       * https://www.nongnu.org/ext2-doc/ext2.html#i-blocks
       */
 
-    unsigned int i_blocks = inode->i_blocks/(2<<super.s_log_block_size);
-    printf("number of blocks %u\n", i_blocks);
-    printf("Is directory? %s \n Is Regular file? %s\n",
-          S_ISDIR(inode->i_mode) ? "true" : "false",
-          S_ISREG(inode->i_mode) ? "true" : "false");
+    // unsigned int i_blocks = inode->i_blocks/(2<<super.s_log_block_size);
+    // printf("number of blocks %u\n", i_blocks);
+    // printf("Is directory? %s \n Is Regular file? %s\n",
+    //       S_ISDIR(inode->i_mode) ? "true" : "false",
+    //       S_ISREG(inode->i_mode) ? "true" : "false");
 
     // Part1: scan all jpg files  -> can extract jpg file, but only for the pic only use direct block. naming problem wasn't solved.
     if (S_ISREG(inode->i_mode)) {
@@ -74,7 +74,7 @@ int main(int argc, char **argv) {
           buffer[3] == (char)0xe8)) {
         is_jpg = 1;
       }
-      printf("is_jpg: %d, inode num is [%d]\n", is_jpg, i );
+      // printf("is_jpg: %d, inode num is [%d]\n", is_jpg, i );
 
       char* inode_num = malloc(sizeof(i));
       sprintf(inode_num, "%d", i);
@@ -207,7 +207,7 @@ int main(int argc, char **argv) {
       }
     }
 
-    // Part2: record filenames -> can output the names, but can;'t get the filename which has been deleted.
+    // Part2: record filenames -> can output the names, but can't get the filename which has been deleted.
     if (S_ISDIR(inode->i_mode)) {
       struct ext2_dir_entry *dentry = malloc(sizeof(struct ext2_dir_entry));
       lseek(fd, (int)inode->i_block[0] * block_size, SEEK_SET); // position data block */
@@ -238,7 +238,7 @@ int main(int argc, char **argv) {
           strcat(path, str2);
           // write filename to file
           FILE *fp = fopen(path, "a+");
-          if(fp == NULL) {
+          if (fp == NULL) {
             printf("Fail to open file.");
             exit(0);
           }
@@ -248,22 +248,22 @@ int main(int argc, char **argv) {
           }
           fclose(fp);
 
-          printf("Entry name is --%s--; Inode num is [%d]\n", name, dentry->inode);
+          // printf("Entry name is --%s--; Inode num is [%d]\n", name, dentry->inode);
         }
       }
     }
 
     // print i_block numberss
-    for(unsigned int i=0; i<EXT2_N_BLOCKS; i++) {
-      if (i < EXT2_NDIR_BLOCKS)                                 /* direct blocks */
-        printf("Block %2u : %u\n", i, inode->i_block[i]);
-      else if (i == EXT2_IND_BLOCK)                             /* single indirect block */
-        printf("Single   : %u\n", inode->i_block[i]);
-      else if (i == EXT2_DIND_BLOCK)                            /* double indirect block */
-        printf("Double   : %u\n", inode->i_block[i]);
-      else if (i == EXT2_TIND_BLOCK)                            /* triple indirect block */
-        printf("Triple   : %u\n", inode->i_block[i]);
-    }
+    // for(unsigned int i=0; i<EXT2_N_BLOCKS; i++) {
+    //   if (i < EXT2_NDIR_BLOCKS)                                 /* direct blocks */
+    //     printf("Block %2u : %u\n", i, inode->i_block[i]);
+    //   else if (i == EXT2_IND_BLOCK)                             /* single indirect block */
+    //     printf("Single   : %u\n", inode->i_block[i]);
+    //   else if (i == EXT2_DIND_BLOCK)                            /* double indirect block */
+    //     printf("Double   : %u\n", inode->i_block[i]);
+    //   else if (i == EXT2_TIND_BLOCK)                            /* triple indirect block */
+    //     printf("Triple   : %u\n", inode->i_block[i]);
+    // }
     free(inode);
   }
   close(fd);
