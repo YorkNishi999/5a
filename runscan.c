@@ -259,87 +259,110 @@ int main(int argc, char **argv) {
     }
 
     // Part2: record filenames -> can output the names, but can't get the filename which has been deleted.
-		if (S_ISDIR(inode->i_mode)) {
-			struct ext2_dir_entry *dentry = malloc(sizeof(struct ext2_dir_entry));
-			lseek(fd, BLOCK_OFFSET(inode->i_block[0]), SEEK_SET);
-      memset (buffer, 0, block_size);
-			read(fd, buffer, sizeof(struct ext2_dir_entry));
+    for (unsigned int i = 0; i < itable_blocks*inodes_per_block; i++) { //  part222222222222222222222
+      struct ext2_inode *inode = malloc(sizeof(struct ext2_inode));
+      read_inode(fd, 0, start_inode_table, i, inode);
+      
+      unsigned int i_blocks = inode->i_blocks/(2<<super.s_log_block_size);
+      if (i_blocks == 0) continue;
 
-			int entry_offset = 0 ;
+      // Part2: record filenames -> can output the names, but can;'t get the filename which has been deleted.
+      if (S_ISDIR(inode->i_mode)) 
+      {
+        struct ext2_dir_entry *dentry = malloc(sizeof(struct ext2_dir_entry));
+        lseek(fd, BLOCK_OFFSET(inode->i_block[0]), SEEK_SET);
+        memset (buffer, 0, block_size);
+        read(fd, buffer, sizeof(struct ext2_dir_entry));
 
-			while (entry_offset < (int)block_size) 
-			{
-				dentry = (struct ext2_dir_entry*) & (buffer[0 + entry_offset]);
+        int entry_offset = 0 ;
 
-        struct ext2_inode *inode_dentry = malloc(sizeof(struct ext2_inode));
-				read_inode(fd, 0, start_inode_table, dentry->inode, inode_dentry);
+        while (entry_offset < (int)block_size) 
+        {
+          dentry = (struct ext2_dir_entry*) & (buffer[0 + entry_offset]);
+
+          struct ext2_inode *inode_dentry = malloc(sizeof(struct ext2_inode));
+          read_inode(fd, 0, start_inode_table, dentry->inode, inode_dentry);
+          
+          int name_len = dentry->name_len & 0xFF; // convert 2 bytes to 4 bytes properly
+          char name [EXT2_NAME_LEN];
+          strncpy(name, dentry->name, name_len);
+          name[name_len] = '\0';
+
+          // create file and rename
+          if (S_ISREG(inode_dentry->i_mode)) {
         
-				int name_len = dentry->name_len & 0xFF; // convert 2 bytes to 4 bytes properly
-				char name [EXT2_NAME_LEN];
-				strncpy(name, dentry->name, name_len);
-				name[name_len] = '\0';
+            for (int i = 0; i < file_index; i++){
+              if ((int)dentry->inode == file_inode[i]){
+                char buffer[inode_dentry->i_size];
 
-        // create file and rename
-        if (S_ISREG(inode_dentry->i_mode)) {
-			
-					for (int i = 0; i < file_index; i++){
-						if ((int)dentry->inode == file_inode[i]){
-							char buffer[inode_dentry->i_size];
+                char* inode_num = malloc(sizeof(i)); 
+                sprintf(inode_num, "%d", dentry->inode);
 
-							char* inode_num = malloc(sizeof(i)); 
-							sprintf(inode_num, "%d", dentry->inode);
+                char str1[] = "./";
+                char str2[] = "/file-";
+                char str3[] = ".jpg";
+                int len = strlen(str1) + strlen(argv[2]) + strlen(str2) + strlen(inode_num) + strlen(str3) + 1;
+                char path[len];
+                memset(path, '\0', len);
+                strcat(path, str1);
+                strcat(path, argv[2]);
+                strcat(path, str2);
+                strcat(path, inode_num);  
+                strcat(path, str3);
+                FILE *fp = fopen(path, "r");
+                if(fp == NULL) {
+                  printf("Fail to open file.");
+                  exit(0);
+                }
+                else {
+                  fread(buffer, inode_dentry->i_size, 1, fp);
+                  char str4[] = "/";
+                  int len = strlen(str1) + strlen(argv[2]) + strlen(str4) + dentry->name_len + 1;
+                  char path[len];
+                  memset(path, '\0', len);
+                  strcat(path, str1);
+                  strcat(path, argv[2]);
+                  strcat(path, str4);
+                  strcat(path, name);
+                  FILE *fp2 = fopen(path, "w+");
+                  printf("path : %s\n", path);
+                  fwrite(buffer, inode_dentry->i_size, 1, fp2);
+                  fclose(fp2);
+                }
+                fclose(fp);
+              }
+            }
+            printf("Entry name is --%s--; Inode num is [%d]\n", name, dentry->inode);
+          }
 
-							char str1[] = "./";
-							char str2[] = "/file-";
-							char str3[] = ".jpg";
-							int len = strlen(str1) + strlen(argv[2]) + strlen(str2) + strlen(inode_num) + strlen(str3) + 1;
-							char path[len];
-							memset(path, '\0', len);
-							strcat(path, str1);
-							strcat(path, argv[2]);
-							strcat(path, str2);
-							strcat(path, inode_num);  
-							strcat(path, str3);
-							FILE *fp = fopen(path, "r");
-							if(fp == NULL) {
-								printf("Fail to open file.");
-								exit(0);
-							} else {
-								fread(buffer, inode_dentry->i_size, 1, fp);
-								char str4[] = "/";
-								int len = strlen(str1) + strlen(argv[2]) + strlen(str4) + dentry->name_len + 1;
-								char path[len];
-								memset(path, '\0', len);
-								strcat(path, str1);
-								strcat(path, argv[2]);
-								strcat(path, str4);
-								strcat(path, name);
-								FILE *fp2 = fopen(path, "w+");
-								printf("path : %s\n", path);
-								fwrite(buffer, inode_dentry->i_size, 1, fp2);
-								fclose(fp2);
-							}
-							fclose(fp);
-						}
-					}
-					printf("Entry name is --%s--; Inode num is [%d]\n", name, dentry->inode);
-				}
-
-        // find the hidden file
-				int name_len_new;
-				if ((name_len % 4) != 0)
-					name_len_new = name_len + (4 - (name_len % 4));
-				else
-					name_len_new = name_len;
+          // find the hidden file
+          int name_len_new;
+          if ((name_len % 4) != 0)
+            name_len_new = name_len + (4 - (name_len % 4));
+          else
+            name_len_new = name_len;
 
 
-				if(dentry->rec_len != (name_len_new + 8)) 
-					entry_offset = entry_offset + name_len_new + 8;
-				else 
-				  entry_offset = entry_offset + dentry->rec_len;	
-
-			}
-		}
+          if(dentry->rec_len != (name_len_new + 8)) 
+            entry_offset = entry_offset + name_len_new + 8;
+          else 
+            entry_offset = entry_offset + dentry->rec_len;	
+        }
+      }
+      
+      // print i_block numberss
+      for(unsigned int i=0; i<EXT2_N_BLOCKS; i++)
+      {       if (i < EXT2_NDIR_BLOCKS)                                 /* direct blocks */
+              printf("Block %2u : %u\n", i, inode->i_block[i]);
+          else if (i == EXT2_IND_BLOCK)                             /* single indirect block */
+              printf("Single   : %u\n", inode->i_block[i]);
+          else if (i == EXT2_DIND_BLOCK)                            /* double indirect block */
+              printf("Double   : %u\n", inode->i_block[i]);
+          else if (i == EXT2_TIND_BLOCK)                            /* triple indirect block */
+              printf("Triple   : %u\n", inode->i_block[i]);
+      }
+      free(inode);
+    }		
 
     // print i_block numberss
     for(unsigned int i=0; i<EXT2_N_BLOCKS; i++) {
@@ -353,6 +376,6 @@ int main(int argc, char **argv) {
         printf("Triple   : %u\n", inode->i_block[i]);
     }
     free(inode);
-  }
+  } // end of part 2
   close(fd);
 }
