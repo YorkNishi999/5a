@@ -21,14 +21,14 @@ int main(int argc, char **argv) {
   }
 
   char *dir = argv[2];
-  //check if output directory has already existed
+  //check if uotput directory has already existed
   if(opendir(argv[2]) == NULL) {
     mkdir(dir, S_IRWXU);
   } else {
     printf("output directory already exists.\n");
     exit(0);
   }
-
+  
   int fd;
 
   fd = open(argv[1], O_RDONLY);    /* open disk image */
@@ -37,11 +37,11 @@ int main(int argc, char **argv) {
 
   struct ext2_super_block super;
   struct ext2_group_desc group;
-
+  
   // example read first the super-block and group-descriptor
   read_super_block(fd, 0, &super);
   read_group_desc(fd, 0, &group);
-
+  
   // printf("There are %u inodes in an inode table block and %u blocks in the idnode table\n", inodes_per_block, itable_blocks);
   //iterate the first inode block
   off_t start_inode_table = locate_inode_table(0, &group);
@@ -59,10 +59,10 @@ int main(int argc, char **argv) {
     // unsigned int i_blocks = inode->i_blocks/(2<<super.s_log_block_size);
     // printf("number of blocks %u\n", i_blocks);
     // printf("Is directory? %s \n Is Regular file? %s\n",
-    //       S_ISDIR(inode->i_mode) ? "true" : "false",
-    //       S_ISREG(inode->i_mode) ? "true" : "false");
+    // 	S_ISDIR(inode->i_mode) ? "true" : "false",
+    // 	S_ISREG(inode->i_mode) ? "true" : "false");
 
-    // Part1: scan all jpg files  -> can extract jpg file, but only for the pic only use direct block. naming problem wasn't solved.
+    // part 1
     if (S_ISREG(inode->i_mode)) {
       lseek(fd, BLOCK_OFFSET(inode->i_block[0]), SEEK_SET);    /* position data block */
       memset(buffer, 0, block_size);
@@ -82,7 +82,7 @@ int main(int argc, char **argv) {
       char* inode_num = malloc(sizeof(i));
       sprintf(inode_num, "%d", i);
 
-      // int counter = 0;
+
 
       if (is_jpg) {
         int counter = 0;
@@ -105,15 +105,9 @@ int main(int argc, char **argv) {
           strcat(path, str3);
 
           FILE *fp = fopen(path, "a+");
-          if(fp == NULL) {
-            printf("Fail to open file.");
-            exit(0);
-          }
-
-          if (j < EXT2_NDIR_BLOCKS) {
+          if (j < EXT2_IND_BLOCK) { // use const.
             lseek(fd, BLOCK_OFFSET(inode->i_block[j]), SEEK_SET);    /* position data block */
             memset(buffer, 0, block_size);
-
             int rv;
             // printf("j < EXT2_NDIR_BLOCKS. inode->i_size: %d, inode->i_size - counter: %d\n", inode->i_size, inode->i_size - counter); // for debug
 
@@ -125,9 +119,9 @@ int main(int argc, char **argv) {
               fwrite(buffer, 1, rv, fp);
             }
             counter += block_size;
-            // printf("write rv in EXT2_NDIR_BLOCKS: %d\n", rv);
 
-
+            file_inode[file_index] = i;
+            file_index++;
           }  // end of direct
 
           if (j == EXT2_IND_BLOCK) {
@@ -136,12 +130,10 @@ int main(int argc, char **argv) {
             read(fd, single_buffer, block_size);
 
             int* single_block_num = (int *)single_buffer;
-
-            for (int fi = 0; fi<256; fi++) { // 256 = 1024 / 4
+            for (int fi = 0; fi<256; fi++) {
               if((int)(inode->i_size - counter) < 0){
                 continue;
               }
-              // printf("j == EXT2_IND_BLOCK. inode->i_size: %d, inode->i_size - counter: %d\n", inode->i_size, inode->i_size - counter); // for debug
               lseek(fd, BLOCK_OFFSET(single_block_num[fi]), SEEK_SET);
               memset(buffer, 0, block_size);
               int rv;
@@ -157,9 +149,7 @@ int main(int argc, char **argv) {
                 }
               }
               counter += block_size;
-              // printf("write rv in EXT2_NDIR_BLOCKS: %d\n", rv);
             }
-            // fclose(fp);
           }  // end of single
 
           if (j == EXT2_DIND_BLOCK) {
@@ -176,17 +166,10 @@ int main(int argc, char **argv) {
               memset(single_buffer, 0, block_size);
               read(fd, single_buffer, block_size);
               int* single_block_num = (int *)single_buffer;
-              // counter += block_size;
-
-
-
-              // int counter = 0;
               for (int fii = 0; fii<256; fii++) {
                 if((int)(inode->i_size - counter) < 0){
                   continue;
                 }
-                // printf("j == EXT2_DIND_BLOCK. inode->i_size: %d, inode->i_size - counter: %d\n", inode->i_size, inode->i_size - counter); // for debug
-
                 lseek(fd, BLOCK_OFFSET(single_block_num[fii]), SEEK_SET);
                 memset(buffer, 0, block_size);
                 int rv;
@@ -255,127 +238,132 @@ int main(int argc, char **argv) {
           }  // end of triple
           fclose(fp);
         } // end of for (j)
+
+        // truncate the file
+        char str1[] = "./";
+        char str2[] = "/file-";
+        char str3[] = ".jpg";
+        int len = strlen(str1) + strlen(argv[2]) + strlen(str2) + strlen(inode_num) + strlen(str3) + 1;
+        char path2[len];
+        memset(path2, '\0', len);
+        strcat(path2, str1);
+        strcat(path2, argv[2]);
+        strcat(path2, str2);
+        strcat(path2, inode_num);
+        strcat(path2, str3);
+
+        int fd = open(path2 , O_RDWR);
+        ftruncate( fd, inode->i_size);
+        close(fd);
+
       }
     }
+  }
 
-    // Part2: record filenames -> can output the names, but can't get the filename which has been deleted.
-    for (unsigned int i = 0; i < itable_blocks*inodes_per_block; i++) { //  part222222222222222222222
-      struct ext2_inode *inode = malloc(sizeof(struct ext2_inode));
-      read_inode(fd, 0, start_inode_table, i, inode);
-      
-      unsigned int i_blocks = inode->i_blocks/(2<<super.s_log_block_size);
-      if (i_blocks == 0) continue;
 
-      // Part2: record filenames -> can output the names, but can;'t get the filename which has been deleted.
-      if (S_ISDIR(inode->i_mode)) 
+  for (unsigned int i = 0; i < itable_blocks*inodes_per_block; i++) { //  part222222222222222222222
+    struct ext2_inode *inode = malloc(sizeof(struct ext2_inode));
+    read_inode(fd, 0, start_inode_table, i, inode);
+    
+    unsigned int i_blocks = inode->i_blocks/(2<<super.s_log_block_size);
+    if (i_blocks == 0) continue;
+
+    // Part2: record filenames -> can output the names, but can;'t get the filename which has been deleted.
+    if (S_ISDIR(inode->i_mode)) 
+    {
+      struct ext2_dir_entry *dentry = malloc(sizeof(struct ext2_dir_entry));
+      lseek(fd, BLOCK_OFFSET(inode->i_block[0]), SEEK_SET);
+      memset (buffer, 0, block_size);
+      read(fd, buffer, sizeof(struct ext2_dir_entry));
+
+      int entry_offset = 0 ;
+
+      while (entry_offset < (int)block_size) 
       {
-        struct ext2_dir_entry *dentry = malloc(sizeof(struct ext2_dir_entry));
-        lseek(fd, BLOCK_OFFSET(inode->i_block[0]), SEEK_SET);
-        memset (buffer, 0, block_size);
-        read(fd, buffer, sizeof(struct ext2_dir_entry));
+        dentry = (struct ext2_dir_entry*) & (buffer[0 + entry_offset]);
 
-        int entry_offset = 0 ;
-
-        while (entry_offset < (int)block_size) 
-        {
-          dentry = (struct ext2_dir_entry*) & (buffer[0 + entry_offset]);
-
-          struct ext2_inode *inode_dentry = malloc(sizeof(struct ext2_inode));
-          read_inode(fd, 0, start_inode_table, dentry->inode, inode_dentry);
-          
-          int name_len = dentry->name_len & 0xFF; // convert 2 bytes to 4 bytes properly
-          char name [EXT2_NAME_LEN];
-          strncpy(name, dentry->name, name_len);
-          name[name_len] = '\0';
-
-          // create file and rename
-          if (S_ISREG(inode_dentry->i_mode)) {
+        struct ext2_inode *inode_dentry = malloc(sizeof(struct ext2_inode));
+        read_inode(fd, 0, start_inode_table, dentry->inode, inode_dentry);
         
-            for (int i = 0; i < file_index; i++){
-              if ((int)dentry->inode == file_inode[i]){
-                char buffer[inode_dentry->i_size];
+        int name_len = dentry->name_len & 0xFF; // convert 2 bytes to 4 bytes properly
+        char name [EXT2_NAME_LEN];
+        strncpy(name, dentry->name, name_len);
+        name[name_len] = '\0';
 
-                char* inode_num = malloc(sizeof(i)); 
-                sprintf(inode_num, "%d", dentry->inode);
+        // create file and rename
+        if (S_ISREG(inode_dentry->i_mode)) {
+      
+          for (int i = 0; i < file_index; i++){
+            if ((int)dentry->inode == file_inode[i]){
+              char buffer[inode_dentry->i_size];
 
-                char str1[] = "./";
-                char str2[] = "/file-";
-                char str3[] = ".jpg";
-                int len = strlen(str1) + strlen(argv[2]) + strlen(str2) + strlen(inode_num) + strlen(str3) + 1;
+              char* inode_num = malloc(sizeof(i)); 
+              sprintf(inode_num, "%d", dentry->inode);
+
+              char str1[] = "./";
+              char str2[] = "/file-";
+              char str3[] = ".jpg";
+              int len = strlen(str1) + strlen(argv[2]) + strlen(str2) + strlen(inode_num) + strlen(str3) + 1;
+              char path[len];
+              memset(path, '\0', len);
+              strcat(path, str1);
+              strcat(path, argv[2]);
+              strcat(path, str2);
+              strcat(path, inode_num);  
+              strcat(path, str3);
+              FILE *fp = fopen(path, "r");
+              if(fp == NULL) {
+                printf("Fail to open file.");
+                exit(0);
+              }
+              else {
+                fread(buffer, inode_dentry->i_size, 1, fp);
+                char str4[] = "/";
+                int len = strlen(str1) + strlen(argv[2]) + strlen(str4) + dentry->name_len + 1;
                 char path[len];
                 memset(path, '\0', len);
                 strcat(path, str1);
                 strcat(path, argv[2]);
-                strcat(path, str2);
-                strcat(path, inode_num);  
-                strcat(path, str3);
-                FILE *fp = fopen(path, "r");
-                if(fp == NULL) {
-                  printf("Fail to open file.");
-                  exit(0);
-                }
-                else {
-                  fread(buffer, inode_dentry->i_size, 1, fp);
-                  char str4[] = "/";
-                  int len = strlen(str1) + strlen(argv[2]) + strlen(str4) + dentry->name_len + 1;
-                  char path[len];
-                  memset(path, '\0', len);
-                  strcat(path, str1);
-                  strcat(path, argv[2]);
-                  strcat(path, str4);
-                  strcat(path, name);
-                  FILE *fp2 = fopen(path, "w+");
-                  printf("path : %s\n", path);
-                  fwrite(buffer, inode_dentry->i_size, 1, fp2);
-                  fclose(fp2);
-                }
-                fclose(fp);
+                strcat(path, str4);
+                strcat(path, name);
+                FILE *fp2 = fopen(path, "w+");
+                printf("path : %s\n", path);
+                fwrite(buffer, inode_dentry->i_size, 1, fp2);
+                fclose(fp2);
               }
+              fclose(fp);
             }
-            printf("Entry name is --%s--; Inode num is [%d]\n", name, dentry->inode);
           }
-
-          // find the hidden file
-          int name_len_new;
-          if ((name_len % 4) != 0)
-            name_len_new = name_len + (4 - (name_len % 4));
-          else
-            name_len_new = name_len;
-
-
-          if(dentry->rec_len != (name_len_new + 8)) 
-            entry_offset = entry_offset + name_len_new + 8;
-          else 
-            entry_offset = entry_offset + dentry->rec_len;	
+          printf("Entry name is --%s--; Inode num is [%d]\n", name, dentry->inode);
         }
-      }
-      
-      // print i_block numberss
-      for(unsigned int i=0; i<EXT2_N_BLOCKS; i++)
-      {       if (i < EXT2_NDIR_BLOCKS)                                 /* direct blocks */
-              printf("Block %2u : %u\n", i, inode->i_block[i]);
-          else if (i == EXT2_IND_BLOCK)                             /* single indirect block */
-              printf("Single   : %u\n", inode->i_block[i]);
-          else if (i == EXT2_DIND_BLOCK)                            /* double indirect block */
-              printf("Double   : %u\n", inode->i_block[i]);
-          else if (i == EXT2_TIND_BLOCK)                            /* triple indirect block */
-              printf("Triple   : %u\n", inode->i_block[i]);
-      }
-      free(inode);
-    }		
 
+        // find the hidden file
+        int name_len_new;
+        if ((name_len % 4) != 0)
+          name_len_new = name_len + (4 - (name_len % 4));
+        else
+          name_len_new = name_len;
+
+
+        if(dentry->rec_len != (name_len_new + 8)) 
+          entry_offset = entry_offset + name_len_new + 8;
+        else 
+          entry_offset = entry_offset + dentry->rec_len;	
+      }
+    }
+    
     // print i_block numberss
-    for(unsigned int i=0; i<EXT2_N_BLOCKS; i++) {
-      if (i < EXT2_NDIR_BLOCKS)                                 /* direct blocks */
-        printf("Block %2u : %u\n", i, inode->i_block[i]);
-      else if (i == EXT2_IND_BLOCK)                             /* single indirect block */
-        printf("Single   : %u\n", inode->i_block[i]);
-      else if (i == EXT2_DIND_BLOCK)                            /* double indirect block */
-        printf("Double   : %u\n", inode->i_block[i]);
-      else if (i == EXT2_TIND_BLOCK)                            /* triple indirect block */
-        printf("Triple   : %u\n", inode->i_block[i]);
+    for(unsigned int i=0; i<EXT2_N_BLOCKS; i++)
+    {       if (i < EXT2_NDIR_BLOCKS)                                 /* direct blocks */
+            printf("Block %2u : %u\n", i, inode->i_block[i]);
+        else if (i == EXT2_IND_BLOCK)                             /* single indirect block */
+            printf("Single   : %u\n", inode->i_block[i]);
+        else if (i == EXT2_DIND_BLOCK)                            /* double indirect block */
+            printf("Double   : %u\n", inode->i_block[i]);
+        else if (i == EXT2_TIND_BLOCK)                            /* triple indirect block */
+            printf("Triple   : %u\n", inode->i_block[i]);
     }
     free(inode);
-  } // end of part 2
+  }		
   close(fd);
 }
