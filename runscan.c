@@ -105,28 +105,29 @@ int main(int argc, char **argv) {
           strcat(path, str3);
 
           FILE *fp = fopen(path, "a+");
+          if(fp == NULL) {
+            printf("Fail to open file.");
+            exit(0);
+          }
 
           if (j < EXT2_NDIR_BLOCKS) {
             lseek(fd, BLOCK_OFFSET(inode->i_block[j]), SEEK_SET);    /* position data block */
             memset(buffer, 0, block_size);
 
             int rv;
-            printf("j < EXT2_NDIR_BLOCKS. inode->i_size: %d, inode->i_size - counter: %d\n", inode->i_size, inode->i_size - counter); // for debug
+            // printf("j < EXT2_NDIR_BLOCKS. inode->i_size: %d, inode->i_size - counter: %d\n", inode->i_size, inode->i_size - counter); // for debug
 
-            if(inode->i_size - counter < 1024) {
+            if(inode->i_size - counter < 1024 && inode->i_size - counter > 0) {
               rv = read(fd, buffer, inode->i_size-counter);
-            } else {
+              fwrite(buffer, 1, rv, fp);
+            } else if (inode->i_size - counter >= 1024) {
               rv = read(fd, buffer, 1024);
-              counter += block_size;
-            }
-
-            // write buffer to file
-            if(fp == NULL) {
-              printf("Fail to open file.");
-              exit(0);
-            } else {
               fwrite(buffer, 1, rv, fp);
             }
+            counter += block_size;
+            // printf("write rv in EXT2_NDIR_BLOCKS: %d\n", rv);
+
+
           }  // end of direct
 
           if (j == EXT2_IND_BLOCK) {
@@ -137,24 +138,26 @@ int main(int argc, char **argv) {
             int* single_block_num = (int *)single_buffer;
 
             for (int fi = 0; fi<256; fi++) { // 256 = 1024 / 4
-              printf("j == EXT2_IND_BLOCK. inode->i_size: %d, inode->i_size - counter: %d\n", inode->i_size, inode->i_size - counter); // for debug
+              if((int)(inode->i_size - counter) < 0){
+                continue;
+              }
+              // printf("j == EXT2_IND_BLOCK. inode->i_size: %d, inode->i_size - counter: %d\n", inode->i_size, inode->i_size - counter); // for debug
               lseek(fd, BLOCK_OFFSET(single_block_num[fi]), SEEK_SET);
               memset(buffer, 0, block_size);
               int rv;
-              if(inode->i_size - counter < 1024) {
-                rv = read(fd, buffer, inode->i_size-counter);
-              } else {
+              if(inode->i_size - counter >= 1024) {
                 rv = read(fd, buffer, 1024);
-                counter += block_size;
-              }
-
-              // write filename to file
-              if(fp == NULL) {
-                printf("Fail to open file.");
-                exit(0);
-              } else {
                 fwrite(buffer, 1, rv, fp);
+                // printf("x>1024\n");
+              } else {
+                if(inode->i_size - counter > 0) {
+                  rv = read(fd, buffer, inode->i_size-counter);
+                  fwrite(buffer, 1, rv, fp);
+                  // printf("0<x<1024\n");
+                }
               }
+              counter += block_size;
+              // printf("write rv in EXT2_NDIR_BLOCKS: %d\n", rv);
             }
             // fclose(fp);
           }  // end of single
@@ -166,31 +169,39 @@ int main(int argc, char **argv) {
             int* double_block_num = (int *)double_buffer;
 
             for (int fi = 0; fi<256; fi++) {
+              if((int)(inode->i_size - counter) < 0){
+                continue;
+              }
               lseek(fd, BLOCK_OFFSET(double_block_num[fi]), SEEK_SET);
               memset(single_buffer, 0, block_size);
               read(fd, single_buffer, block_size);
               int* single_block_num = (int *)single_buffer;
+              // counter += block_size;
+
 
 
               // int counter = 0;
               for (int fii = 0; fii<256; fii++) {
+                if((int)(inode->i_size - counter) < 0){
+                  continue;
+                }
+                // printf("j == EXT2_DIND_BLOCK. inode->i_size: %d, inode->i_size - counter: %d\n", inode->i_size, inode->i_size - counter); // for debug
+
                 lseek(fd, BLOCK_OFFSET(single_block_num[fii]), SEEK_SET);
                 memset(buffer, 0, block_size);
                 int rv;
-                if(inode->i_size - counter < 1024) {
-                  rv = read(fd, buffer, inode->i_size-counter);
-                } else {
+                if(inode->i_size - counter >= 1024) {
                   rv = read(fd, buffer, 1024);
-                  counter += block_size;
-                }
-
-                // write filename to file
-                if(fp == NULL) {
-                  printf("Fail to open file.");
-                  exit(0);
-                } else {
                   fwrite(buffer, 1, rv, fp);
+                  // printf("x>1024\n");
+                } else {
+                  if(inode->i_size - counter > 0) {
+                    rv = read(fd, buffer, inode->i_size-counter);
+                    fwrite(buffer, 1, rv, fp);
+                    // printf("0<x<1024\n");
+                  }
                 }
+                counter += block_size;
               }
             }
           }  // end of double
@@ -202,35 +213,42 @@ int main(int argc, char **argv) {
             int* triple_block_num = (int *)triple_buffer;
 
             for (int fi = 0; fi<256; fi++) {
+              if((int)(inode->i_size - counter) < 0){
+                continue;
+              }
               lseek(fd, BLOCK_OFFSET(triple_block_num[fi]), SEEK_SET);
               memset(double_buffer, 0, block_size);
               read(fd, double_buffer, block_size);
               int* double_block_num = (int *)double_buffer;
 
               for (int fii = 0; fii<256; fii++) {
+                if((int)(inode->i_size - counter) < 0){
+                  continue;
+                }
                 lseek(fd, BLOCK_OFFSET(double_block_num[fii]), SEEK_SET);
                 memset(single_buffer, 0, block_size);
                 read(fd, single_buffer, block_size);
                 int* sinble_block_num = (int*)single_buffer;
                 
                 for(int fiii = 0; fiii<256; fiii++) {
+                  if((int)(inode->i_size - counter) < 0){
+                    continue;
+                  }
                   lseek(fd, BLOCK_OFFSET(sinble_block_num[fii]), SEEK_SET);
                   memset(buffer, 0, block_size);
                   int rv;
-                  if(inode->i_size - counter < 1024) {
-                    rv = read(fd, buffer, inode->i_size-counter);
-                  } else {
+                  if(inode->i_size - counter >= 1024) {
                     rv = read(fd, buffer, 1024);
-                    counter += block_size;
-                  }
-
-                  // write filename to file
-                  if(fp == NULL) {
-                    printf("Fail to open file.");
-                    exit(0);
-                  } else {
                     fwrite(buffer, 1, rv, fp);
+                    // printf("x>1024\n");
+                  } else {
+                    if(inode->i_size - counter > 0) {
+                      rv = read(fd, buffer, inode->i_size-counter);
+                      fwrite(buffer, 1, rv, fp);
+                      // printf("0<x<1024\n");
+                    }
                   }
+                  counter += block_size;
                 }
               }
             }
@@ -241,7 +259,6 @@ int main(int argc, char **argv) {
     }
 
     // Part2: record filenames -> can output the names, but can't get the filename which has been deleted.
-		// Part2: record filenames -> can output the names, but can;'t get the filename which has been deleted.
 		if (S_ISDIR(inode->i_mode)) {
 			struct ext2_dir_entry *dentry = malloc(sizeof(struct ext2_dir_entry));
 			lseek(fd, BLOCK_OFFSET(inode->i_block[0]), SEEK_SET);
@@ -287,8 +304,7 @@ int main(int argc, char **argv) {
 							if(fp == NULL) {
 								printf("Fail to open file.");
 								exit(0);
-							}
-							else {
+							} else {
 								fread(buffer, inode_dentry->i_size, 1, fp);
 								char str4[] = "/";
 								int len = strlen(str1) + strlen(argv[2]) + strlen(str4) + dentry->name_len + 1;
