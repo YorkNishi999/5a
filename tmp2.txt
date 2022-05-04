@@ -1,0 +1,727 @@
+Reading first super-block from device: 
+Block size                    : 1024
+number of inodes in a block   : 8
+Inode table size in blocks    : 240
+Blocks per group              : 8192
+number of block groups        : 4
+in read_super_block func offset: 1024
+Reading super-block from device: 
+Inodes count            : 7680
+Blocks count            : 30720
+First data block        : 1
+Block size              : 1024
+log2(Block size)        : 0
+Blocks per group        : 8192
+Inodes per group        : 1920
+First non-reserved inode: 11
+Size of inode structure : 128
+in read_group_desc func offset: 2080
+Reading group-descriptor from device:
+Blocks bitmap block: 122
+Inodes bitmap block: 123
+Inodes table block : 124
+Free blocks count  : 4283
+Free inodes count  : 1905
+Directories count  : 3
+inode 0: 
+Block  0 : 4294967295
+Block  1 : 4294967295
+Block  2 : 4294967295
+Block  3 : 4294967295
+Block  4 : 4294967295
+Block  5 : 4294967295
+Block  6 : 4294967295
+Block  7 : 4294967295
+Block  8 : 4294967295
+Block  9 : 4294967295
+Block 10 : 4294967295
+Block 11 : 4294967295
+Single   : 4294967295
+Double   : 4294967295
+Triple   : 4294967295
+inode 2: 
+Block  0 : 364
+Block  1 : 0
+Block  2 : 0
+Block  3 : 0
+Block  4 : 0
+Block  5 : 0
+Block  6 : 0
+Block  7 : 0
+Block  8 : 0
+Block  9 : 0
+Block 10 : 0
+Block 11 : 0
+Single   : 0
+Double   : 0
+Triple   : 0
+inode 7: 
+Block  0 : 0
+Block  1 : 0
+Block  2 : 0
+Block  3 : 0
+Block  4 : 0
+Block  5 : 0
+Block  6 : 0
+Block  7 : 0
+Block  8 : 0
+Block  9 : 0
+Block 10 : 0
+Block 11 : 0
+Single   : 0
+Double   : 377
+Triple   : 0
+inode 11: 
+Block  0 : 365
+Block  1 : 0
+Block  2 : 0
+Block  3 : 0
+Block  4 : 0
+Block  5 : 0
+Block  6 : 0
+Block  7 : 0
+Block  8 : 0
+Block  9 : 0
+Block 10 : 0
+Block 11 : 0
+Single   : 0
+Double   : 0
+Triple   : 0
+inode 12: 
+Block  0 : 366
+Block  1 : 0
+Block  2 : 0
+Block  3 : 0
+Block  4 : 0
+Block  5 : 0
+Block  6 : 0
+Block  7 : 0
+Block  8 : 0
+Block  9 : 0
+Block 10 : 0
+Block 11 : 0
+Single   : 0
+Double   : 0
+Triple   : 0
+inode 13: 
+j < EXT2_NDIR_BLOCKS. inode->i_size: 775, inode->i_size - counter: 775
+Block  0 : 367
+Block  1 : 0
+Block  2 : 0
+Block  3 : 0
+Block  4 : 0
+Block  5 : 0
+Block  6 : 0
+Block  7 : 0
+Block  8 : 0
+Block  9 : 0
+Block 10 : 0
+Block 11 : 0
+Single   : 0
+Double   : 0
+Triple   : 0
+inode 14: 
+j < EXT2_NDIR_BLOCKS. inode->i_size: 2470, inode->i_size - counter: 2470
+j < EXT2_NDIR_BLOCKS. inode->i_size: 2470, inode->i_size - counter: 1446
+j < EXT2_NDIR_BLOCKS. inode->i_size: 2470, inode->i_size - counter: 422
+Block  0 : 368
+Block  1 : 369
+Block  2 : 370
+Block  3 : 0
+Block  4 : 0
+Block  5 : 0
+Block  6 : 0
+Block  7 : 0
+Block  8 : 0
+Block  9 : 0
+Block 10 : 0
+Block 11 : 0
+Single   : 0
+Double   : 0
+Triple   : 0
+inode 15: 
+j < EXT2_NDIR_BLOCKS. inode->i_size: 1872, inode->i_size - counter: 1872
+j < EXT2_NDIR_BLOCKS. inode->i_size: 1872, inode->i_size - counter: 848
+Block  0 : 371
+Block  1 : 372
+Block  2 : 0
+Block  3 : 0
+Block  4 : 0
+Block  5 : 0
+Block  6 : 0
+Block  7 : 0
+Block  8 : 0
+Block  9 : 0
+Block 10 : 0
+Block 11 : 0
+Single   : 0
+Double   : 0
+Triple   : 0
+inode 16: 
+j < EXT2_NDIR_BLOCKS. inode->i_size: 3608525, inode->i_size - counter: 3608525
+j < EXT2_NDIR_BLOCKS. inode->i_size: 3608525, inode->i_size - counter: 3607501
+j < EXT2_NDIR_BLOCKS. inode->i_size: 3608525, inode->i_size - counter: 3606477
+j < EXT2_NDIR_BLOCKS. inode->i_size: 3608525, inode->i_size - counter: 3605453
+j < EXT2_NDIR_BLOCKS. inode->i_size: 3608525, inode->i_size - counter: 3604429
+j < EXT2_NDIR_BLOCKS. inode->i_size: 3608525, inode->i_size - counter: 3603405
+j < EXT2_NDIR_BLOCKS. inode->i_size: 3608525, inode->i_size - counter: 3602381
+j < EXT2_NDIR_BLOCKS. inode->i_size: 3608525, inode->i_size - counter: 3601357
+j < EXT2_NDIR_BLOCKS. inode->i_size: 3608525, inode->i_size - counter: 3600333
+j < EXT2_NDIR_BLOCKS. inode->i_size: 3608525, inode->i_size - counter: 3599309
+j < EXT2_NDIR_BLOCKS. inode->i_size: 3608525, inode->i_size - counter: 3598285
+j < EXT2_NDIR_BLOCKS. inode->i_size: 3608525, inode->i_size - counter: 3597261
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3596237
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3595213
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3594189
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3593165
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3592141
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3591117
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3590093
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3589069
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3588045
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3587021
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3585997
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3584973
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3583949
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3582925
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3581901
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3580877
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3579853
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3578829
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3577805
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3576781
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3575757
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3574733
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3573709
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3572685
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3571661
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3570637
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3569613
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3568589
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3567565
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3566541
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3565517
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3564493
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3563469
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3562445
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3561421
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3560397
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3559373
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3558349
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3557325
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3556301
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3555277
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3554253
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3553229
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3552205
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3551181
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3550157
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3549133
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3548109
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3547085
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3546061
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3545037
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3544013
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3542989
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3541965
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3540941
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3539917
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3538893
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3537869
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3536845
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3535821
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3534797
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3533773
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3532749
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3531725
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3530701
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3529677
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3528653
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3527629
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3526605
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3525581
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3524557
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3523533
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3522509
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3521485
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3520461
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3519437
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3518413
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3517389
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3516365
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3515341
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3514317
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3513293
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3512269
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3511245
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3510221
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3509197
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3508173
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3507149
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3506125
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3505101
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3504077
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3503053
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3502029
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3501005
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3499981
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3498957
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3497933
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3496909
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3495885
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3494861
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3493837
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3492813
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3491789
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3490765
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3489741
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3488717
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3487693
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3486669
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3485645
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3484621
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3483597
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3482573
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3481549
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3480525
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3479501
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3478477
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3477453
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3476429
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3475405
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3474381
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3473357
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3472333
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3471309
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3470285
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3469261
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3468237
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3467213
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3466189
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3465165
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3464141
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3463117
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3462093
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3461069
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3460045
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3459021
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3457997
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3456973
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3455949
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3454925
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3453901
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3452877
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3451853
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3450829
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3449805
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3448781
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3447757
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3446733
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3445709
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3444685
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3443661
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3442637
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3441613
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3440589
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3439565
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3438541
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3437517
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3436493
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3435469
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3434445
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3433421
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3432397
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3431373
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3430349
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3429325
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3428301
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3427277
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3426253
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3425229
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3424205
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3423181
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3422157
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3421133
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3420109
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3419085
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3418061
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3417037
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3416013
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3414989
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3413965
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3412941
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3411917
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3410893
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3409869
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3408845
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3407821
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3406797
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3405773
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3404749
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3403725
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3402701
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3401677
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3400653
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3399629
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3398605
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3397581
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3396557
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3395533
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3394509
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3393485
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3392461
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3391437
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3390413
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3389389
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3388365
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3387341
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3386317
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3385293
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3384269
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3383245
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3382221
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3381197
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3380173
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3379149
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3378125
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3377101
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3376077
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3375053
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3374029
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3373005
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3371981
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3370957
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3369933
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3368909
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3367885
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3366861
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3365837
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3364813
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3363789
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3362765
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3361741
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3360717
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3359693
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3358669
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3357645
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3356621
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3355597
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3354573
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3353549
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3352525
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3351501
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3350477
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3349453
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3348429
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3347405
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3346381
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3345357
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3344333
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3343309
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3342285
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3341261
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3340237
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3339213
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3338189
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3337165
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3336141
+j == EXT2_IND_BLOCK. inode->i_size: 3608525, inode->i_size - counter: 3335117
+Block  0 : 373
+Block  1 : 374
+Block  2 : 375
+Block  3 : 376
+Block  4 : 378
+Block  5 : 379
+Block  6 : 380
+Block  7 : 381
+Block  8 : 382
+Block  9 : 383
+Block 10 : 384
+Block 11 : 385
+Single   : 386
+Double   : 643
+Triple   : 0
+inode 17: 
+j < EXT2_NDIR_BLOCKS. inode->i_size: 5253242, inode->i_size - counter: 5253242
+j < EXT2_NDIR_BLOCKS. inode->i_size: 5253242, inode->i_size - counter: 5252218
+j < EXT2_NDIR_BLOCKS. inode->i_size: 5253242, inode->i_size - counter: 5251194
+j < EXT2_NDIR_BLOCKS. inode->i_size: 5253242, inode->i_size - counter: 5250170
+j < EXT2_NDIR_BLOCKS. inode->i_size: 5253242, inode->i_size - counter: 5249146
+j < EXT2_NDIR_BLOCKS. inode->i_size: 5253242, inode->i_size - counter: 5248122
+j < EXT2_NDIR_BLOCKS. inode->i_size: 5253242, inode->i_size - counter: 5247098
+j < EXT2_NDIR_BLOCKS. inode->i_size: 5253242, inode->i_size - counter: 5246074
+j < EXT2_NDIR_BLOCKS. inode->i_size: 5253242, inode->i_size - counter: 5245050
+j < EXT2_NDIR_BLOCKS. inode->i_size: 5253242, inode->i_size - counter: 5244026
+j < EXT2_NDIR_BLOCKS. inode->i_size: 5253242, inode->i_size - counter: 5243002
+j < EXT2_NDIR_BLOCKS. inode->i_size: 5253242, inode->i_size - counter: 5241978
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5240954
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5239930
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5238906
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5237882
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5236858
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5235834
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5234810
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5233786
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5232762
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5231738
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5230714
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5229690
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5228666
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5227642
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5226618
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5225594
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5224570
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5223546
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5222522
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5221498
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5220474
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5219450
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5218426
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5217402
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5216378
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5215354
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5214330
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5213306
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5212282
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5211258
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5210234
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5209210
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5208186
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5207162
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5206138
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5205114
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5204090
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5203066
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5202042
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5201018
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5199994
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5198970
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5197946
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5196922
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5195898
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5194874
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5193850
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5192826
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5191802
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5190778
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5189754
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5188730
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5187706
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5186682
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5185658
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5184634
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5183610
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5182586
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5181562
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5180538
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5179514
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5178490
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5177466
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5176442
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5175418
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5174394
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5173370
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5172346
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5171322
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5170298
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5169274
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5168250
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5167226
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5166202
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5165178
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5164154
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5163130
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5162106
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5161082
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5160058
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5159034
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5158010
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5156986
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5155962
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5154938
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5153914
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5152890
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5151866
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5150842
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5149818
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5148794
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5147770
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5146746
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5145722
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5144698
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5143674
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5142650
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5141626
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5140602
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5139578
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5138554
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5137530
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5136506
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5135482
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5134458
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5133434
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5132410
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5131386
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5130362
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5129338
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5128314
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5127290
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5126266
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5125242
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5124218
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5123194
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5122170
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5121146
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5120122
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5119098
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5118074
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5117050
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5116026
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5115002
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5113978
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5112954
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5111930
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5110906
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5109882
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5108858
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5107834
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5106810
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5105786
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5104762
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5103738
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5102714
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5101690
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5100666
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5099642
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5098618
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5097594
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5096570
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5095546
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5094522
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5093498
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5092474
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5091450
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5090426
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5089402
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5088378
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5087354
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5086330
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5085306
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5084282
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5083258
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5082234
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5081210
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5080186
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5079162
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5078138
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5077114
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5076090
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5075066
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5074042
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5073018
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5071994
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5070970
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5069946
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5068922
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5067898
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5066874
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5065850
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5064826
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5063802
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5062778
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5061754
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5060730
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5059706
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5058682
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5057658
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5056634
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5055610
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5054586
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5053562
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5052538
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5051514
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5050490
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5049466
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5048442
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5047418
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5046394
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5045370
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5044346
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5043322
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5042298
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5041274
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5040250
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5039226
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5038202
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5037178
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5036154
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5035130
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5034106
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5033082
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5032058
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5031034
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5030010
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5028986
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5027962
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5026938
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5025914
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5024890
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5023866
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5022842
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5021818
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5020794
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5019770
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5018746
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5017722
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5016698
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5015674
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5014650
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5013626
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5012602
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5011578
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5010554
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5009530
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5008506
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5007482
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5006458
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5005434
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5004410
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5003386
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5002362
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5001338
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 5000314
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4999290
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4998266
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4997242
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4996218
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4995194
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4994170
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4993146
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4992122
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4991098
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4990074
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4989050
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4988026
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4987002
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4985978
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4984954
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4983930
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4982906
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4981882
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4980858
+j == EXT2_IND_BLOCK. inode->i_size: 5253242, inode->i_size - counter: 4979834
+Block  0 : 3913
+Block  1 : 3914
+Block  2 : 3915
+Block  3 : 3916
+Block  4 : 3917
+Block  5 : 3918
+Block  6 : 3919
+Block  7 : 3920
+Block  8 : 3921
+Block  9 : 3922
+Block 10 : 3923
+Block 11 : 3924
+Single   : 3925
+Double   : 4182
+Triple   : 0

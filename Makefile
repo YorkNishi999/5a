@@ -12,6 +12,8 @@ clean:
 	rm -f runscan2
 	rm -f runscan3
 	rm -f runscan4
+	rm -rf output
+	rm -rf output2
 
 main: $(MAIN.C)
 	$(CC) $(CFLAGS) $(DFLAGS) $(MAIN.C) $(DEPENDENCIES.C) -o $(EXEC)
