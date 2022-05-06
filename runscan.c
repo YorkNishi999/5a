@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
     struct ext2_inode *inode = malloc(sizeof(struct ext2_inode));
     read_inode(fd, 0, start_inode_table, i, inode);
     if (inode->i_blocks == 0) continue;
-    printf("inode %u: \n", i);
+    // printf("inode %u: \n", i);
 
     /* the maximum index of the i_block array should be computed from i_blocks / ((1024<<s_log_block_size)/512)
       * or once simplified, i_blocks/(2<<s_log_block_size)
@@ -327,14 +327,14 @@ int main(int argc, char **argv) {
                 strcat(path, str4);
                 strcat(path, name);
                 FILE *fp2 = fopen(path, "w+");
-                printf("path : %s\n", path);
+                // printf("path : %s\n", path);
                 fwrite(buffer, inode_dentry->i_size, 1, fp2);
                 fclose(fp2);
               }
               fclose(fp);
             }
           }
-          printf("Entry name is --%s--; Inode num is [%d]\n", name, dentry->inode);
+          // printf("Entry name is --%s--; Inode num is [%d]\n", name, dentry->inode);
         }
 
         // find the hidden file
@@ -353,16 +353,16 @@ int main(int argc, char **argv) {
     }
     
     // print i_block numberss
-    for(unsigned int i=0; i<EXT2_N_BLOCKS; i++)
-    {       if (i < EXT2_NDIR_BLOCKS)                                 /* direct blocks */
-            printf("Block %2u : %u\n", i, inode->i_block[i]);
-        else if (i == EXT2_IND_BLOCK)                             /* single indirect block */
-            printf("Single   : %u\n", inode->i_block[i]);
-        else if (i == EXT2_DIND_BLOCK)                            /* double indirect block */
-            printf("Double   : %u\n", inode->i_block[i]);
-        else if (i == EXT2_TIND_BLOCK)                            /* triple indirect block */
-            printf("Triple   : %u\n", inode->i_block[i]);
-    }
+    // for(unsigned int i=0; i<EXT2_N_BLOCKS; i++)
+    // {       if (i < EXT2_NDIR_BLOCKS)                                 /* direct blocks */
+    //         printf("Block %2u : %u\n", i, inode->i_block[i]);
+    //     else if (i == EXT2_IND_BLOCK)                             /* single indirect block */
+    //         printf("Single   : %u\n", inode->i_block[i]);
+    //     else if (i == EXT2_DIND_BLOCK)                            /* double indirect block */
+    //         printf("Double   : %u\n", inode->i_block[i]);
+    //     else if (i == EXT2_TIND_BLOCK)                            /* triple indirect block */
+    //         printf("Triple   : %u\n", inode->i_block[i]);
+    // }
     free(inode);
   }		
   close(fd);
