@@ -260,21 +260,21 @@ int main(int argc, char **argv) {
     }
   }
 
-
-  for (unsigned int i = 0; i < itable_blocks*inodes_per_block; i++) { //  part222222222222222222222
+  // part2: scan filename and create files with filename
+  for (unsigned int i = 0; i < itable_blocks * inodes_per_block; i++) { 
     struct ext2_inode *inode = malloc(sizeof(struct ext2_inode));
     read_inode(fd, 0, start_inode_table, i, inode);
     
     unsigned int i_blocks = inode->i_blocks/(2<<super.s_log_block_size);
     if (i_blocks == 0) continue;
 
-    // Part2: record filenames -> can output the names, but can;'t get the filename which has been deleted.
+    // scan directory etries
     if (S_ISDIR(inode->i_mode)) 
     {
       struct ext2_dir_entry *dentry = malloc(sizeof(struct ext2_dir_entry));
       lseek(fd, BLOCK_OFFSET(inode->i_block[0]), SEEK_SET);
       memset (buffer, 0, block_size);
-      read(fd, buffer, sizeof(struct ext2_dir_entry));
+      read(fd, buffer, 1024);
 
       int entry_offset = 0 ;
 
@@ -295,7 +295,7 @@ int main(int argc, char **argv) {
       
           for (int i = 0; i < file_index; i++){
             if ((int)dentry->inode == file_inode[i]){
-              char buffer[inode_dentry->i_size];
+              char* buffer = malloc(sizeof(char) * inode_dentry->i_size);
 
               char* inode_num = malloc(sizeof(i)); 
               sprintf(inode_num, "%d", dentry->inode);
